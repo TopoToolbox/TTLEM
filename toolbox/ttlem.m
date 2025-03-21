@@ -196,13 +196,15 @@ if ~isempty(p.K_weight)
 end
 
 %% visualize output
+if ~isinf(p.ploteach)
 hGUI  = preparegui(H1);
 set(hGUI.ax.time,'xlim',[0 tspan]);
 drawnow
+end
 
 %% save directory
 % does directory exist?
-if ~isdir(p.resultsdir)
+if ~isfolder(p.resultsdir) && ~isinf(p.saveeach)
     mkdir(p.resultsdir)
 end
 resultsdir = fullfile(p.resultsdir,filesep);
@@ -218,7 +220,12 @@ if p.steadyState
 end
 
 %% Run simulation
-while iter < nriter && ~get(hGUI.stopbutton,'value');
+keepgoing = true;
+while iter < nriter && keepgoing
+    if ~isinf(p.ploteach)
+        keepgoing = ~get(hGUI.stopbutton,'value');
+    end
+
     %% Track time
     t = t + dt;
     iter = iter + 1;
@@ -330,12 +337,12 @@ while iter < nriter && ~get(hGUI.stopbutton,'value');
     end
     
     %% Save
-    if mod(iter,p.saveeach)==0;
+    if mod(iter,p.saveeach)==0
         save([resultsdir p.fileprefix num2str(round(t)) '.mat'],'H1');
     end
     
     %% Plot
-    if mod(iter,p.ploteach)==0;
+    if mod(iter,p.ploteach)==0
         tspanstr = num2str(tspan);
         set(hGUI.hIm,'Cdata',H1.Z);
         set(hGUI.timedisp,'String',[num2str(round(t)) ' / ' tspanstr ' years (' num2str(t/tspan*100,'%3.1f') '%)'] );

@@ -22,7 +22,8 @@ function opts = toolboxOptions
     % as a string vector. When specifying ToolboxMatlabPath, include the
     % relative or absolute paths to the folders.
 
-    opts.ToolboxMatlabPath = "toolbox";
+    opts.ToolboxMatlabPath = {"toolbox",...
+        fullfile('toolbox','LateralDisplacement')};
 
     % Path to the toolbox Getting Started Guide, specified as a string. The
     % Getting Started Guide is a MATLAB code file (.m, .mlx) containing a
@@ -37,7 +38,7 @@ function opts = toolboxOptions
     % .mltbx extension, MATLAB appends the extension automatically when it
     % creates the file.
 
-    opts.OutputFile = fullfile("release","toolbox Toolbox");
+    opts.OutputFile = fullfile("release","TTLEM");
     
     % Latest MATLAB release that the toolbox is compatible with, specified
     % as a string using the format RXXXXx, for example, "R2023a". If there
@@ -105,8 +106,12 @@ function opts = toolboxOptions
     % Required add-ons to be downloaded and installed during toolbox
     % installation, specified as a struct vector. See the doc for
     % matlab.addons.toolbox.ToolboxOptions for more information.
-
-    % opts.RequiredAddons = 
+    tt.Name = "TopoToolbox";
+    tt.Identifier = "23ebe30d-196e-4a7c-bff2-064c039918b9";
+    tt.DownloadURL = "https://github.com/TopoToolbox/topotoolbox3";
+    tt.EarliestVersion = "3.0";
+    tt.LatestVersion = "10.0";
+    % opts.RequiredAddons = tt;
 
     % Additional required software packages to be downloaded and installed
     % during toolbox installation, specified as a struct vector. See the

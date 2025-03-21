@@ -145,10 +145,10 @@ function p = ttlemset(varargin)
 %           Earth Surf., 120(7), 1189–1205, doi:10.1002/2014JF003376, 2015.
 %           <https://www.researchgate.net/publication/279957445_Campforts_and_Govers-2015-JGR_ES_Keeping_the_edge_SI>
 %
-% Authors:   Benjamin Campforts (benjamin.campforts@kuleuven.be)
-%           Wolfgang Schwanghart (w.schwanghart[at]geo.uni-potsdam.de)
+% Authors:  Benjamin Campforts (b.campforts[at]vu.nl)
+%           Wolfgang Schwanghart (schwangh[at]uni-potsdam.de)
 %
-% Date:     8. July, 2016
+% Date:     21. March, 2025
 %% Parse inputs
 p = inputParser;
 p.CaseSensitive = true;
@@ -225,7 +225,3 @@ addParameter(p,'resultsdir',['results' filesep]);
 parse(p,varargin{:});
 % and return
 p = p.Results;
-
-
-
-

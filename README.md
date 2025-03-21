@@ -5,7 +5,7 @@
 ## What is TTLEM
 TTLEM is a grid based object oriented Landscape Evolution Model based on the TopoToolbox library. The aim of TTLEM is to provide an accurate numerical tool to simulate landscape evolution in eroding regions. TTLEM is multi-process based and hence allows a modular use of the code depending on the requirements of the end user. The LEM has a good overall computational performance and obtains a high numerical accuracy in solving the partial differential equations involved when simulating landscape evolution.
 
-## Getting started
+## Installation
 TTLEM is a add-on release of TopoToolbox and can be downloaded from the GitHub repository (https://github.com/topotoolbox/TTLEM). Extract the package to a folder on your personal computer and add the TopoToolbox folder with its subfolders to the search path in the MATLAB environment.
 
 Before working with TopoToolbox the functions need to be on the search 
@@ -16,15 +16,12 @@ path of MATLAB. Enter following code into the command line:
 TTLEM is developed to be easy accessible and adaptable and requires knowledge of the MATLAB syntax. Users should be able to readily run TTLEM with both synthetic land evolution models and natural simulations, starting from an existing digital elevation model. With TTLEM, we target the same users than those who are using TopoToolpox and want to explore landscape functioning beyond present day topographic indices.
 
 ## Where can I report bugs or suggestions for enhancement?
-In case of bugs in the source code, any suggestions for model improvements or elaboration, please contact us on one of these mail addresses:
 
-Benjamin Campforts:     b.campforts[at]vu.nl
-
-Wolfgang Schwanghart:   schwangh[at]uni-potsdam.de
+Please report bugs [here](https://github.com/TopoToolbox/TTLEM/issues).
 
 ## User manuals TTLEM
 
-TTLEM comes with 3 tutorials. All of them can be executed in Matlab. E.g., for the first example just enter the comment: 'TTLEM_usersguide_1_intro' in the command window.
+TTLEM comes with three tutorials. All of them can be executed in MATLAB. E.g., for the first example just enter the comment: 'TTLEM_usersguide_1_intro' in the command window.
 - TTLEM_usersguide_1_intro.m Short introduction to the use of TTLEM
 - TTLEM_usersguide_2_Synthetic_model_run.m In this tutorial, we show how TTLEM can be used to simulate synthetic landscape evolution. We illustrate how the user can change between different algorithms to simulate hillslope response and how different numerical schemes can be set. Finally, we also show how modelled data can be processed and converted in a movie of an evolving landscape. Detailed information of parameters, their default values and units can be found in the help section of ttlemset.
 - TTLEM_usersguide_3_Synthetic_Geological_Configuration One of the main advantages of LEMs is their potential to explore different geo-tectonic configurations and corresponding hypothesis at a  very low cost. As an example, we simulated landscape evolution over a time span of 30 Myr. Successively, three spatial and temporally dependent uplift scenarios are imposed to the model. On top of this three scenarios, a horizontal shortening field is imposed over the simulated domain with high lateral displacements in the left upper corner, linearly decreasing in both x and y directions to the Southeastern bottom of the simulated domain.
